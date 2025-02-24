@@ -13,3 +13,16 @@ const circle = {
 
 circle.draw();
 
+
+//Factory Function
+//Factory functions are functions that return an object
+ function createCircle(radius){
+    return {
+        radius, //same thing as saying => radius: radius
+        draw: function(){
+            console.log("draw");
+        }
+    }
+ }
+
+ 
