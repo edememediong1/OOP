@@ -25,4 +25,15 @@ circle.draw();
     }
  }
 
- 
+ // Constructor Function
+ // Constructor functions are functions that create objects
+
+ function Circle(radius){
+    console.log("this", this); //this is a reference to the object that is executing the piece of code
+    this.radius = radius; //this is used instead of return to reference the object that is created;
+    this.draw = function(){
+        console.log("draw1");
+    }
+ }
+
+ const another =  Circle(1); //new keyword creates an empty object, sets "this" to point to that object and returns the object from the function
