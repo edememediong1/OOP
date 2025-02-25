@@ -53,16 +53,16 @@ circle.draw();
     y.constructor; //returns Object() { [native code] }
 
     Other constructor functions include:
-    new String(); //returns a string object 
-    new Number(); //returns a number object
-    new Boolean(); //returns a boolean object
-    new Function(); //returns a function object
-    new Array(); //returns an array object
-    new RegExp(); //returns a regular expression object
+    new String(); //returns a string object.... "", '', `` are string literals
+    new Number(); //returns a number object.... 1, 2, 3, etc are number literals
+    new Boolean(); //returns a boolean object... true or false are boolean literals
+    new Function(); //returns a function object ... function(){} is a function literal
+    new Array(); //returns an array object ... [] is an array literal
+    new RegExp(); //returns a regular expression object ... /()/ is a regular expression literal
     new Date(); //returns a date object
-    new Error(); //returns an error object
+    new Error(); //returns an error object   
     new Symbol(); //returns a symbol object
-    new Map(); //returns a map object
+    new Map(); //returns a map object... a map is a collection of key-value pairs
     new Set(); //returns a set object
     new WeakMap(); //returns a weakmap object
     new WeakSet(); //returns a weakset object
@@ -73,3 +73,18 @@ circle.draw();
     const x = {};
     x instanceof Object; //returns true
 */
+
+//The Function() constructor creates a new Function object. In JavaScript every function is actually a Function object
+const Circle1 = new Function('radius', `
+    this.radius = radius;
+    this.draw = function(){
+        console.log("draw2");
+    }
+`);
+
+const circle1 = new Circle1(1);//This is the same as calling the Circle function
+ 
+//OR 
+Circle1.call({}, 1); //This is the same as calling the Circle function
+Circle1.apply({}, [1]); //This is the same as calling the Circle function
+//Call and apply are used to call a function and set the value of "this" to a specific object {}
