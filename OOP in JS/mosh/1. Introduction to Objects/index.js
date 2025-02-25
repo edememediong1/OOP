@@ -74,6 +74,9 @@ circle.draw();
     x instanceof Object; //returns true
 */
 
+//IN JS FUNCTIONS ARE OBJECTS AND CAN BE USED TO CREATE OBJECTS
+// Every function has its own methods and properties
+
 //The Function() constructor creates a new Function object. In JavaScript every function is actually a Function object
 const Circle1 = new Function('radius', `
     this.radius = radius;
@@ -88,3 +91,5 @@ const circle1 = new Circle1(1);//This is the same as calling the Circle function
 Circle1.call({}, 1); //This is the same as calling the Circle function
 Circle1.apply({}, [1]); //This is the same as calling the Circle function
 //Call and apply are used to call a function and set the value of "this" to a specific object {}
+
+
